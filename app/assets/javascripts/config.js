@@ -4,7 +4,7 @@
 //= require_tree ./services
 //= require_tree ./filters
 
-AppChallenge = angular.module('AppChallenge', [
+Caravel = angular.module('Caravel', [
   'ngRoute',
   'ngResource',
   'smartTable.table',
