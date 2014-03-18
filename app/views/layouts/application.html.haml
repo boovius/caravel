@@ -1,0 +1,24 @@
+%html
+  %head
+    %title
+      Caravel
+    = include_gon
+    = csrf_meta_tags
+    = stylesheet_link_tag "application"
+  %body(ng-app="Caravel")
+    %nav.nav.navbar.navbar-inverse.navbar-fixed-top
+      %a.navbar-brand(href="/")
+        Caravel
+      %ul.nav.navbar-nav.navbar-right
+        %li.dropdown
+          -if current_user.present?
+            %a.dropdown-toggle(href="#" data-toggle="dropdown")
+              #{current_user.name}'s portal
+            %ul.dropdown-menu
+              %li
+                %a(href="/widgets/new")Create Widget
+    = yield
+    #footer
+    = javascript_include_tag "application"
+
+
