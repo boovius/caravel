@@ -10,6 +10,8 @@ gem 'gon'
 
 gem 'haml-rails'
 
+gem 'omniauth-github'
+
 group :assets do
   gem 'sass-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.3.0'

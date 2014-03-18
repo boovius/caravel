@@ -41,6 +41,6 @@ class Api::WidgetsController < ApplicationController
   private
 
   def widget_params
-    params.require(:widget).permit(:title, :repo, :summary, :url, :stories, :user_id, features_attributes: [:id, :title])
+    params.require(:widget).permit(:title, :summary, :user_id, features_attributes: [:id, :title])
   end
 end
