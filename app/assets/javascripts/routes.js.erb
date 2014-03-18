@@ -1,6 +1,7 @@
-AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+Caravel.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 //= depend_on_asset 'home/home.html'
-//= depend_on_asset 'users/index.html'
+//= depend_on_asset 'widgets/new.html'
+//= depend_on_asset 'widgets/show.html'
 
   $locationProvider.html5Mode(true)
 
@@ -9,17 +10,21 @@ AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvi
     templateUrl: '<%= asset_path('home/home.html') %>',
     controller: 'HomeController'
   })
-  .when('/users', {
-    templateUrl: '<%= asset_path('users/index.html') %>',
-    controller: 'HomeController',
+  .when('/widgets/new', {
+    templateUrl: '<%= asset_path('widgets/new.html') %>',
+    controller: 'WidgetCreateController'
+  })
+  .when('/widgets/:id', {
+    templateUrl: '<%= asset_path('widgets/show.html') %>',
+    controller: "WidgetShowController",
     resolve: {
-      users: ['UserService', '$q', function(UserService, $q) {
-        var deferred = $q.defer();
-        UserService.current.query(function(successData){
+      widget: ['WidgetService', '$route', '$q', function(WidgetService, $route, $q){
+        var deferred = $q.defer()
+        WidgetService.widget.get({id: $route.current.params.id}, function(successData){
           deferred.resolve(successData);
         }, function(errorData){
           deferred.reject();
-        })
+        });
         return deferred.promise;
       }]
     }

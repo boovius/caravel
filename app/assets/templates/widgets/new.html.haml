@@ -1,0 +1,25 @@
+#widget-new.container
+  %h3 Let's make a new Widget!
+  %form.form-horizontal(name="widgetForm" role="form" ng-model="widget" ng-submit="createwidget()")
+    .form-group
+      %label.control-label.col-sm-2(for="title") Title
+      .col-sm-10
+        %input.form-control(type="text" name="title" ng-model="widget.title" placeholder="widget title" required)
+    .form-group
+      %label.control-label.col-sm-2(for="summary") Summary
+      .col-sm-10
+        %textarea.form-control(name="summary" ng-model="widget.summary" maxlength="240" cols="20")
+    %ngForm.row(name="widgetFeaturesForm" ng-repeat="feature in widget.features")
+      %span Feature # {{$index + 1}}
+      .form-group
+        %label.control-label.col-sm-2(for="feature-title") Feature Title
+        .col-sm-10
+          %input.form-control(type="text" name="feature-title" ng-model="widget.features[$index].title")
+      .row
+        %input.btn.btn-danger.pull-right.controls(ng-click="deleteFeature($index)" value="Delete Feature")
+    .row
+      %input.btn.btn-primary(ng-click="addNewFeature()" value="Add Feature")
+    .row
+      %input.input-lg.btn.btn-success.pull-right.controls(type="submit" value="Create New widget!")
+
+
