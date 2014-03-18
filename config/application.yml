@@ -1,0 +1,21 @@
+defaults: &defaults
+
+development: &development
+  <<: *defaults
+  app_url: http://localhost:3000
+
+test:
+  <<: *development
+
+qa:
+  <<: *defaults
+
+s1:
+  <<: *defaults
+  app_url:
+
+
+production:
+  <<: *defaults
+  app_url:
+
