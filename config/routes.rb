@@ -1,6 +1,6 @@
 Caravel::Application.routes.draw do
   namespace :api, defaults: {format: :json} do
-    namespace :users do
+    namespace :widgets do
       post "/"       , action: 'create'
       get  "/",        action: 'index'
       get "/:id",      action: 'show'
