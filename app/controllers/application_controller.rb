@@ -23,7 +23,6 @@ class ApplicationController < ActionController::Base
     config = {
       appUrl: APP_CONFIG[:app_url]
     }
-    config.merge!(manifest: template_files) if template_files.present?
     gon.config = config
   end
 

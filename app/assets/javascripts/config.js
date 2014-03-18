@@ -7,7 +7,6 @@
 Caravel = angular.module('Caravel', [
   'ngRoute',
   'ngResource',
-  'smartTable.table',
   'ui.bootstrap'
 ])
 
