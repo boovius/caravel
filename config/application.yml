@@ -3,6 +3,9 @@ defaults: &defaults
 development: &development
   <<: *defaults
   app_url: http://localhost:3000
+  github:
+    key: '3feccc2b920929a2363e'
+    secret: '386f61594ef8ba215274a68a394f06324e822f38'
 
 test:
   <<: *development
@@ -18,4 +21,7 @@ s1:
 production:
   <<: *defaults
   app_url:
+  github:
+    key:
+    secret:
 
