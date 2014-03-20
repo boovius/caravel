@@ -5,12 +5,12 @@
 @import 'bootstrap/mixins';
 
 // CSS Reset
-@import 'bootstrap/reset';
+// @import 'bootstrap/reset'; // not working
 
 // Grid system and page structure
 @import 'bootstrap/scaffolding';
 @import 'bootstrap/grid';
-@import 'bootstrap/layouts';
+// @import 'bootstrap/layouts'; // not working
 
 // Base CSS
 @import 'bootstrap/type';
